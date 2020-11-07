@@ -1,4 +1,5 @@
 import csv
+import utils
 
 def vis(df):
 
@@ -29,10 +30,7 @@ def main():
             else:
                 close_data.append(float(line[2]))
 
-    df = list()
-
-    for i in range(0, len(close_data)-1):
-        df.append(round((close_data[i]-close_data[i+1])*100)/100)
+    df = utils.get_diff(close_data)
 
     # Average df
 

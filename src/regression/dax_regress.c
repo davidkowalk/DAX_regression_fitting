@@ -54,7 +54,7 @@ void main() {
   };
   uint dimensions = 20;
 
-  double precision = 0.001;
+  double precision = 0.02;
   double gamma = 0.002;
   double dx = 0.0001; //dx for derivative
 
