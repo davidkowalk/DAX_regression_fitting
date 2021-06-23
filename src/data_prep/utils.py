@@ -1,3 +1,5 @@
+import csv
+
 #weights = [
 #        0.004566,
 #        0.027907,
@@ -67,6 +69,24 @@ close = [
     13145.17,
     13050.92
 ]
+
+def read_close():
+
+    vals = list()
+    f_vals = list()
+
+    with open("../../data/DAX_6_11_2017_to_6_11_2020.csv") as f:
+        reader = csv.reader(f)
+
+        for line in reader:
+            vals.append(line[2])
+
+        for val in vals[1:]:
+            f_vals.append(float(val))
+
+    return f_vals
+
+close_all = read_close()
 
 
 def get_diff(close_data):
